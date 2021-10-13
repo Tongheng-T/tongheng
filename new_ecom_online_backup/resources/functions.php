@@ -113,11 +113,13 @@ while($row = fetch_array($query)) {
 
 $product_image = display_image($row['product_image']);
 
+//<img src="../resources/images/{$product_image}" 
+//http://placehold.it/320x150
 $product = <<<DELIMETER
 
 <div class="col-sm-4 col-lg-4 col-md-4">
     <div class="thumbnail">
-        <a href="item.php?id={$row['product_id']}"><img src="resources/{$product_image}" alt=""></a>
+        <a href="item.php?id={$row['product_id']}"><img src="http://placehold.it/320x150" alt=""></a>
         <div class="caption">
             <h4 class="pull-right">&#36;{$row['product_price']}</h4>
             <h4><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a>
@@ -188,7 +190,7 @@ $product = <<<DELIMETER
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="../resources/{$product_image}" alt="">
+                    <img src="../resources/images/{$product_image}" alt="">
                     <div class="caption">
                         <h3>{$row['product_title']}</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -230,7 +232,7 @@ $product = <<<DELIMETER
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="../resources/{$product_image}" alt="">
+                    <img src="../resources/Images/{$product_image}" alt="">
                     <div class="caption">
                         <h3>{$row['product_title']}</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
