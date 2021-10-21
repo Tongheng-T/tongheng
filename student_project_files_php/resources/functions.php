@@ -68,7 +68,7 @@ function get_products() {
                 </h4>
                 <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
 
-                <a class="btn btn-primary" target="_blank" href="item.php?id={$row['product_id']}">Add to cart</a>
+                <a class="btn btn-primary" target="_blank" href="cart.php?add={$row['product_id']}">Add to cart</a>
             </div>
         
         </div>
@@ -187,7 +187,7 @@ function send_message(){
 
     if(isset($_POST['submit'])){
 
-        $to        = "someEmailaddress@gmail.com";
+        $to        = $_POST['email'];
         $from_name =  $_POST['name'];
         $subject   =  $_POST['subject'];
         $email     =  $_POST['email'];

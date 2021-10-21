@@ -26,14 +26,16 @@
         <!-- Page Features -->
         <div class="row text-center">
 
-     <?php echo get_products_in_cat_page();?>
+         <?php get_products_in_cat_page(); ?>
+
+
         </div>
         <!-- /.row -->
 
-  
+      
 
     </div>
     <!-- /.container -->
-    
-    <?php include(TEMPLATE_FRONT . DS . "footer.php") ?>
 
+
+<?php include(TEMPLATE_FRONT . DS . "footer.php") ?>
