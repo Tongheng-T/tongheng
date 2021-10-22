@@ -199,10 +199,12 @@ function send_message(){
 
         if(!$result) {
 
-            echo "ERROR";
+            set_message("Sorry we could not send your message");
+            redirect("contact.php");
         }else{
 
-            echo "SENT";
+            set_message("your Message has been sent");
+            redirect("contact.php");
         }
  
     }
