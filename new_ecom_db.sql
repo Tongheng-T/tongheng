@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2021 at 01:42 PM
+-- Generation Time: Oct 25, 2021 at 05:09 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -70,23 +70,22 @@ INSERT INTO `orders` (`order_id`, `order_amount`, `order_transaction`, `order_st
 
 CREATE TABLE `products` (
   `product_id` int(11) NOT NULL,
-  `product_title` varchar(255) NOT NULL,
+  `product_title` varchar(225) NOT NULL,
   `product_category_id` int(11) NOT NULL,
   `product_price` float NOT NULL,
   `product_quantity` int(11) NOT NULL,
   `product_description` text NOT NULL,
   `short_desc` text NOT NULL,
   `product_image` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`product_id`, `product_title`, `product_category_id`, `product_price`, `product_quantity`, `product_description`, `short_desc`, `product_image`) VALUES
-(23, 'bbbbbbb', 32, 5, 0, 'Angkor, in Cambodia\'s northern province of Siem Reap, is one of the most important archaeological sites of Southeast Asia. It extends over approximately 400\r\n', '', ' http://placehold.it/320x150'),
-(25, 'DALL', 0, 0, 0, 'Angkor, in Cambodia\'s northern province of Siem Reap, is one of the most important archaeological sites of Southeast Asia. It extends over approximately 400', '', ' http://placehold.it/320x150'),
-(26, 'cc', 1, 23, 0, 'Angkor, in Cambodia\'s northern province of Siem Reap, is one of the most important archaeological sites of Southeast Asia. It extends over approximately 400\r\n', '', ' http://placehold.it/320x150');
+(1, 'product1', 32, 34.4, 3, 'Angkor, in Cambodia\'s northern province of Siem Reap, is one of the most important archaeological sites of Southeast Asia. It extends over approximately 400', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\r\n', ' http://placehold.it/320x150'),
+(2, 'product2', 32, 23, 2, 'Angkor, in Cambodia\'s northern province of Siem Reap, is one of the most important archaeological sites of Southeast Asia. It extends over approximately 400', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\r\n', ' http://placehold.it/320x150');
 
 -- --------------------------------------------------------
 
@@ -129,7 +128,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `username`, `email`, `password`) VALUES
 (1, 'rico', 'rico@hotmail.com', '123'),
-(11, 'Demo User', '', '');
+(11, 'Demo User', '', 'qwe');
 
 --
 -- Indexes for dumped tables
@@ -185,7 +184,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `reports`
