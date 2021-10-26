@@ -92,7 +92,7 @@ function cart(){
           $sub = $row['product_price']*$value;
           $item_quantity += $value;
          
-          $product = <<<DELIMTER
+          $product = <<<DELIMETER
         
           <tr>
              <td>{$row['product_title']}</td>
@@ -110,10 +110,10 @@ function cart(){
           <input type="hidden" name="item_number_{$item_number}" value="{$row['product_id']}">
           <input type="hidden" name="amount_{$amount}" value="{$row['product_price']}">
           
-          <input type="hidden" name="quantity_{$quantity}" value="{$row['product_quantity']}">
+          <input type="hidden" name="quantity_{$quantity}" value="{$value}">
       
       
-          DELIMTER;
+          DELIMETER;
       
           echo $product;
 
@@ -138,7 +138,20 @@ function cart(){
 }
 
 
+function show_paypal(){
 
+  if(isset($_SESSION['item_quantity']) && $_SESSION['item_quantity'] >=1){
 
+  $paypal_button = <<<DELIMETER
+
+  <input type="image" name="upload"  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+  alt="PayPal - The safer, easier way to pay online">
+
+  DELIMETER;
+
+  return $paypal_button;
+
+  }
+}
 
  ?>

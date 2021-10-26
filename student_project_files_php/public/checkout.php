@@ -1,15 +1,7 @@
 <?php require_once("../resources/config.php"); ?>
 <?php include(TEMPLATE_FRONT . DS . "header.php") ?>
 
-<?php 
 
-if(isset($_SESSION['product_1'])){
-
-    echo $_SESSION['product_1'] ;
-
-}
-
-?>
 
 <!-- Page Content -->
 <div class="container">
@@ -24,7 +16,7 @@ if(isset($_SESSION['product_1'])){
         <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
             <input type="hidden" name="cmd" value="_cart">
             <input type="hidden" name="business" value="business@codingtongheng.com">
-            
+            <input type="hidden" name="currency_code" value="US">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -39,9 +31,7 @@ if(isset($_SESSION['product_1'])){
                     <?php cart();?>
                 </tbody>
             </table>
-
-            <input type="image" name="upload" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
-                alt="PayPal - The safer, easier way to pay online">
+            <?php echo show_paypal(); ?>
         </form>
 
 
@@ -56,7 +46,7 @@ if(isset($_SESSION['product_1'])){
                 <tr class="cart-subtotal">
                     <th>Items:</th>
                     <td><span class="amount">
-                            <?php echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION['item_quantity'] = "" ;?>
+                            <?php echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION['item_quantity'] = "0" ;?>
                         </span></td>
                 </tr>
                 <tr class="shipping">
@@ -69,7 +59,7 @@ if(isset($_SESSION['product_1'])){
                     <td><strong><span class="amount">&#36;
 
                                 <?php 
-                    echo isset($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_total'] = "" ;
+                    echo isset($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_total'] = "0" ;
                     
                     ?>
 
@@ -86,5 +76,7 @@ if(isset($_SESSION['product_1'])){
 
     </div>
     <!--Main Content-->
+</div>
 
-    <?php include(TEMPLATE_FRONT . DS . "footer.php") ?>
+
+<?php include(TEMPLATE_FRONT . DS . "footer.php") ?>
