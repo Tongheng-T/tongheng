@@ -1,4 +1,4 @@
-<?php require_once("../resources/config.php"); ?>
+<?php require_once("config.php"); ?>
 
 
 <?php 
@@ -66,6 +66,67 @@ if(isset($_GET["delete"])) {
 }
 
 
+function report(){
+
+  $total = 0;
+  $item_quantity = 0;
+
+  foreach ($_SESSION as $name => $value){
+
+    if($value > 0){
+
+      if(substr($name, 0, 8  ) == "product_"){
+        
+        $length = strlen($name );
+        $id = substr($name, 8 , $length);
+
+        $query = query("SELECT * FROM products WHERE product_id = ". escape_string($id) ." ");
+        confirm($query);
+      
+        while($row = fetch_array($query)) {
+
+          $sub = $row['product_price']*$value;
+          $item_quantity += $value;
+         
+
+
+
+        }
+        
+         $total += $sub;
+        echo $item_quantity;
+
+      }
+
+    }
+
+
+  }
+
+
+}
+
+
+function show_paypal(){
+
+  if(isset($_SESSION['item_quantity']) && $_SESSION['item_quantity'] >= 1){
+
+  $paypal_button = <<<DELIMETER
+
+  <input type="image" name="upload"  
+  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+  alt="PayPal - The safer, easier way to pay online">
+
+  DELIMETER;
+
+  return $paypal_button;
+
+  }
+}
+
+
+
+
 function cart(){
 
   $total = 0;
@@ -112,6 +173,8 @@ function cart(){
           
           <input type="hidden" name="quantity_{$quantity}" value="{$value}">
       
+
+          
       
           DELIMETER;
       
@@ -138,21 +201,6 @@ function cart(){
 }
 
 
-function show_paypal(){
 
-  if(isset($_SESSION['item_quantity']) && $_SESSION['item_quantity'] >=1){
-
-  $paypal_button = <<<DELIMETER
-
-  <input type="image" name="upload"  
-  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
-  alt="PayPal - The safer, easier way to pay online">
-
-  DELIMETER;
-
-  return $paypal_button;
-
-  }
-}
 
  ?>

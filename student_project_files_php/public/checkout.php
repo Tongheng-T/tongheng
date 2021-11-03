@@ -16,10 +16,15 @@
         <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
             <input type="hidden" name="cmd" value="_cart">
             <input type="hidden" name="upload" value="1">
-            <input type="hidden" name="business" value="business@codingtongheng.com">
 
-            <input type="hidden" name="currency_code" value="US">
+            <!-- <input type="hidden" name="cmd" value="_xclick"> -->
+            <input type="hidden" name="business" value="businesscoding88@gmail.com">
+            <input type="hidden" name="currency_code" value="USD">
             <table class="table table-striped">
+
+                <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID">
+                // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.
+                </script>
                 <thead>
                     <tr>
                         <th>Product</th>
