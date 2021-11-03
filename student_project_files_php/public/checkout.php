@@ -22,7 +22,7 @@
             <input type="hidden" name="currency_code" value="USD">
             <table class="table table-striped">
 
-                <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID">
+                <script src="https://www.paypal.com/sdk/js?client-id=AW9VS29EjwOh8Ftp4ZHR9va_6K7ftJ8WJxWRN7CZ_CcNOC29FVo1ai_1iSpkYsdpOUE4xCPCjvpK2kTr">
                 // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.
                 </script>
                 <thead>
