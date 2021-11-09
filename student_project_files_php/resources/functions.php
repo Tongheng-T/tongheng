@@ -1,8 +1,12 @@
 <?php 
 
 
-
 // helper function
+
+function last_id(){
+    global $connection;
+    return mysqli_insert_id($connection);
+}
 
 function set_message($msg){
     if(!empty($msg)){
@@ -221,6 +225,33 @@ function send_message(){
 
 /*********************************BACK END FUNCTIONS************************************/
 
+
+
+function dispay_orders() {
+    $query = query("SELECT * FROM ordersss");
+    confirm($query);
+    
+
+    while($row = fetch_array($query)) {
+
+
+        $orders = <<<DELIMETER
+     
+        <tr>
+        <td>{$row['order_id']}</td>
+        <td>{$row['order_amount']}</td>
+        <td>{$row['order_transaction']}</td>
+        <td>{$row['order_currency']}</td>
+        <td>{$row['order_status']}</td>
+        </tr>
+
+
+        DELIMETER;
+        
+        echo $orders;
+
+    }
+}
 
 
 ?>

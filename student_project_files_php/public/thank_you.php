@@ -3,27 +3,10 @@
 
 <?php 
 
-var_dump(($_GET['tx']));die();
-if(isset($_GET['tx'])){
+//var_dump(($_GET['tx']));die();
 
-    $amount = $_GET['amt'];
-    $currency = $_GET['cc'];
-    $transaction = $_GET['tx'];
-    $status = $_GET['st']; 
+process_transaction();
 
-
-   
-    $query = query("INSERT INTO orders (order_amount, order_transaction,order_status, order_currency) VALUES('{$amount}', '{$currency}','{$transaction}','{$status}')");
-    confirm($query);
-    
-    report();
-
-   // session_destroy();
-
-}else{
-
-    redirect("index.php");
-}
 
 
 ?>
