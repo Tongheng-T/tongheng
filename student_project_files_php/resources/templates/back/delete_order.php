@@ -12,4 +12,4 @@ if(isset($_GET['id'])){
     redirect("../../../public/admin/index.php?orders");
 }
 
-?>
+?>​​

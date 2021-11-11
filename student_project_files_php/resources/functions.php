@@ -256,4 +256,62 @@ function dispay_orders() {
 }
 
 
+/************************************Admin products ******************* */
+
+function get_products_in_admin(){
+
+    $query = query("SELECT * FROM products");
+    confirm($query);
+    
+
+    while($row = fetch_array($query)) {
+
+
+        $orders = <<<DELIMETER
+     
+        <tr>
+          <td>{$row['product_id']}</td>
+          <td>{$row['product_title']}<br>
+          <a href="index.php?edit_product&id={$row['product_id']}"><img src="{$row['product_image']}" alt=""></a>
+          </td>
+          <td>Category</td>
+          <td>{$row['product_price']}</td>
+          <td>{$row['product_quantity']}</td>
+          <td><a class="btn btn-danger" href="../../resources/templates/back/delete_product.php?id={$row['product_id']}" ><span class="glyphicon glyphicon-remove"></span></a></td>
+        </tr>
+
+
+        DELIMETER;
+        
+        echo $orders;
+
+    }
+
+
+}
+
+/******************************Add Products in admin************************ */
+
+function add_product(){
+
+
+     if(isset($_POST['publish'])){
+
+        $product_title           = escape_string($_POST['product_title']);
+        $product_category_id     = escape_string($_POST['$product_category_id']);
+        $product_price           = escape_string($_POST['product_price']);
+        $product_description     = escape_string($_POST['product_description']);
+        $short_desc              = escape_string($_POST['short_desc']);
+        $product_quantity        = escape_string($_POST['product_quantity']);
+        $product_image           = escape_string($_FILES['file']['name']);
+        $product_temp_location   = escape_string($_FILES['file']['tmp_name']);
+
+        move_uploaded_file($product_temp_location, UPLOAD_DIRECTO .DS. $product_image);
+
+     }
+
+
+}
+
+
 ?>
