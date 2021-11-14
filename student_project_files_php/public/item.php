@@ -27,7 +27,7 @@
 <div class="row">
 
     <div class="col-md-7">
-       <img class="img-responsive" src="<?php echo $row['product_image'];?>" alt="">
+       <img class="img-responsive" src="../resources/<?php echo display_image($row['product_image']);?>" alt="">
 
     </div>
 
@@ -37,7 +37,7 @@
          
 
     <div class="caption-full">
-        <h4><a href="#"><?php echo $row['product_title']; ?></a> </h4>
+        <h4><a href="#"><?php  echo $row['product_title']; ?></a> </h4>
         <hr>
         <h4 class=""><?php echo "&#36;" . $row['product_price']; ?></h4>
 

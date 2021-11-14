@@ -69,7 +69,7 @@
         <select name="product_category_id" id="" class="form-control">
             <option value="">Select Category</option>
 
-            <?php //show_categories_add_product_page(); ?>
+            <?php show_categories_add_product_page(); ?>
            
         </select>
 
