@@ -1,5 +1,5 @@
 
-<?php //add_category(); ?>
+<?php add_category(); ?>
 <h1 class="page-header">
   Product Categories
 
@@ -42,7 +42,7 @@
 
 
     <tbody>
-       <?php //show_categories_in_admin(); ?>
+       <?php show_categories_in_admin(); ?>
     </tbody>
 
         </table>

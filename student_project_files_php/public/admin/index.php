@@ -50,7 +50,25 @@ if(!isset($_SESSION['username'])){
 
             include(TEMPLATE_BACK ."/edit_product.php") ;
         }
-        
+        if(isset($_GET['users'])){
+
+            include(TEMPLATE_BACK ."/users.php") ;
+        }
+
+        if(isset($_GET['add_user'])){
+
+            include(TEMPLATE_BACK ."/add_user.php") ;
+        }
+
+        if(isset($_GET['edit_user'])){
+
+            include(TEMPLATE_BACK ."/edit_user.php") ;
+        }
+
+        if(isset($_GET['reports'])){
+
+            include(TEMPLATE_BACK ."/reports.php") ;
+        }
 
         ?>
 
