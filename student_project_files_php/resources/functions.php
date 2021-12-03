@@ -56,7 +56,7 @@ function fetch_array($result){
 
 function get_products() {
 
-    $query=  query("SELECT * FROM products");
+    $query=  query("SELECT * FROM products WHERE product_quantity >= 1");
     confirm($query);
     
     while($row = fetch_array($query)){
@@ -107,7 +107,7 @@ echo $category_links;
 
 function get_products_in_cat_page() {
 
-    $query=  query("SELECT * FROM products WHERE product_category_id = " . escape_string($_GET['id']) . " ");
+    $query=  query("SELECT * FROM products WHERE product_category_id = " . escape_string($_GET['id']) . " AND product_quantity >= 1 ");
     confirm($query);
     
     while($row = fetch_array($query)){
@@ -141,7 +141,7 @@ function get_products_in_cat_page() {
 
 function get_products_in_shop_page() {
 
-    $query=  query("SELECT * FROM products");
+    $query=  query("SELECT * FROM products WHERE product_quantity >= 1");
     confirm($query);
     
     while($row = fetch_array($query)){
@@ -249,7 +249,7 @@ function dispay_orders() {
         <td>{$row['order_transaction']}</td>
         <td>{$row['order_currency']}</td>
         <td>{$row['order_status']}</td> 
-        <td><a class="btn btn-danger" href="../../resources/templates/back/delete_order.php?id={$row['order_id']}" ><span class="glyphicon glyphicon-remove"></span></a></td>
+        <td><a class="btn btn-danger" href="index.php?delete_order_id={$row['order_id']}" ><span class="glyphicon glyphicon-remove"></span></a></td>
 
         </tr>
 
@@ -521,7 +521,7 @@ function add_user() {
 
 function get_reports(){
 
-    $query = query("SELECT * FROM reports");
+    $query = query("SELECT * FROM reports ");
     confirm($query);
     
 
