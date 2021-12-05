@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2021 at 10:47 AM
+-- Generation Time: Dec 05, 2021 at 11:52 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -96,8 +96,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_title`, `product_category_id`, `product_price`, `product_quantity`, `product_description`, `short_desc`, `product_image`) VALUES
-(3, 'product3', 2, 34.4, 3, 'fgfds', '', 'image_1.jpg'),
-(15, 'DELL1', 2, 565, 4, 'dsgs g', 'gfcg', 'image_2.jpg'),
+(15, 'DELL1', 2, 565, 4, 'dsgs g', 'gfcg', 'image_5.jpg'),
 (17, 'DELL', 1, 66, 6, 'jyh', 'hfgh', 'image_2.jpg'),
 (24, 'book', 1, 4, 2, 'fnujnhg', 'ghj ghj f', 'image_2.jpg');
 
@@ -134,6 +133,27 @@ INSERT INTO `reports` (`report_id`, `product_id`, `order_id`, `product_price`, `
 (70, 1, 13, 34.4, 'product1', 1),
 (71, 2, 14, 23, 'product2', 1),
 (72, 3, 15, 34.4, 'product3', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slides`
+--
+
+CREATE TABLE `slides` (
+  `slide_id` int(11) NOT NULL,
+  `slide_title` varchar(225) NOT NULL,
+  `slide_image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `slides`
+--
+
+INSERT INTO `slides` (`slide_id`, `slide_title`, `slide_image`) VALUES
+(1, 'tes6', 'image_2.jpg'),
+(2, 'tes8', 'image_5.jpg'),
+(3, 'tes4', 'image_5.jpg');
 
 -- --------------------------------------------------------
 
@@ -186,6 +206,12 @@ ALTER TABLE `reports`
   ADD PRIMARY KEY (`report_id`);
 
 --
+-- Indexes for table `slides`
+--
+ALTER TABLE `slides`
+  ADD PRIMARY KEY (`slide_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -218,6 +244,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `reports`
   MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+
+--
+-- AUTO_INCREMENT for table `slides`
+--
+ALTER TABLE `slides`
+  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
