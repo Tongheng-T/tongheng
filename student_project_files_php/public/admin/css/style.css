@@ -1,4 +1,4 @@
-#page-wrapper {
+/* #page-wrapper {
   background-color: #F1F1F1 !important;
 }
 
@@ -31,15 +31,15 @@ margin-bottom: 10px;
 
 width: 49%;
 
-}
+} */
 
 
 /******************Styles Admin ************/
 
 .slide_image{
 
-  width: 100px;
-  margin-bottom: 2px;
+  width: 250px;
+  margin-bottom: 5px;
 }
 
 
